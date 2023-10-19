@@ -9,6 +9,8 @@
         <module>tsinglink-tool-all</module>
         <module>tsinglink-tool-cat</module>
         <module>tsinglink-tool-kotlin-ext</module>
+        <module>tsinglink-tool-csv</module>
+        <module>tsinglink-tool-test</module>
     </modules>
     <groupId>com.tsinglink</groupId>
     <version>1.0.1</version>
