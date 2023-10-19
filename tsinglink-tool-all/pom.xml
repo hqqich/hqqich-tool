@@ -28,6 +28,12 @@
       <artifactId>tsinglink-tool-cat</artifactId>
       <version>1.0.1</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.tsinglink</groupId>
+      <artifactId>tsinglink-tool-kotlin-ext</artifactId>
+      <version>1.0.1</version>
+    </dependency>
   </dependencies>
 
   <build>

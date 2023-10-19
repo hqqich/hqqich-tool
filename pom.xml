@@ -8,6 +8,7 @@
     <modules>
         <module>tsinglink-tool-all</module>
         <module>tsinglink-tool-cat</module>
+        <module>tsinglink-tool-kotlin-ext</module>
     </modules>
     <groupId>com.tsinglink</groupId>
     <version>1.0.1</version>
