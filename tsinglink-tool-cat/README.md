@@ -1,32 +1,28 @@
-# cat
+# cat 加密模块
 
-## 一、介绍  
+## 一、介绍
 
 > cat:全称 `Cryptographic Algorithm Tool`
 
-主要提供以下加密算法调用：  
-1.AES  
-2.DES  
-3.DSA
-4.MD5  
-5.MersenneTwister(梅森旋转算法)  
-6.RSA  
-7.国密SM2
-8.国密SM3
-9.国密SM4
-10.DH
-11.MD2
-12.MD4
-13.RipeMD-160
-其他算法敬请期待。
+主要提供以下加密算法调用：
+- [x] AES
+- [x] DES
+- [x] DSA
+- [x] MD5
+- [x] MersenneTwister(梅森旋转算法)
+- [x] RSA
+- [x] 国密SM2
+- [x] 国密SM3
+- [x] 国密SM4
+- [x] DH
+- [x] MD2
+- [x] MD4
+- [x] RipeMD-160
 
-## 二、软件架构及说明  
+## 二、说明
 
-1.本工具包基于纯java编写而成；  
-2.部分算法密钥对基于bcprov-jdk16的调用生成。  
-3.部分加密与解密算法来自网上公开的源码，并在此基础上进行整理和优化而来；  
-4.本加密与解密包均在JDK1.8环境下编译并测试通过，建议所使用JAVA环境不低于JDK1.8；  
-5.其他高版本的JDK（如JDK9、JDK10、JDK11及以上版本）请自行测试；
+- 部分算法密钥对基于bcprov-jdk16的调用生成;
+- 部分加密与解密算法来自网上公开的源码，并在此基础上进行整理和优化而来;
 
 
 ## 四、使用说明
@@ -148,12 +144,15 @@ System.out.println("原始信息：" + srcStr + " 加密后的密文为："+encr
 String decryptMsg= RSAUtils.decrypt(encriptMsg, keyPair.getPrivate());  
 System.out.println("密文解密明文为：" +decryptMsg);  
 
-### 7.国密SM2
+### 国密SM2
 
-国密码SM2算法采用椭圆曲线公钥密码算法，属于非对称加密算法；
-加密的结果由C1,C2,C3三部分组成，其中C1是生成随机数的计算出的椭圆曲线点，C2是密文数据，C3是SM3的摘要值。
-旧国密标准的结果是按C1C2C3顺序，新标准的是按C1C3C2顺序存放!
-完整使用示例：
+> 国密码SM2算法采用椭圆曲线公钥密码算法，属于非对称加密算法；
+> 加密的结果由C1,C2,C3三部分组成，其中C1是生成随机数的计算出的椭圆曲线点，C2是密文数据，C3是SM3的摘要值。
+> 旧国密标准的结果是按C1C2C3顺序，新标准的是按C1C3C2顺序存放!
+
+#### 完整使用示例：
+
+```java
 String srcStr="春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！";  
 System.out.println("原始信息："+srcStr);  
 //生成密钥对
@@ -186,15 +185,23 @@ System.out.println("签名信息:" + signatureMessage);
 System.out.println("数字签名:" + signature);
 System.out.println("验证签名:" + SM2Utils.verifySignature(signatureMessage, signature, IDA, publicKey));
 
-8.国密SM3  
-国密SM3算法为杂凑算法，是国家密码局公布并推荐使用的一种单向加密算法，其加密过程不可逆。  
-本工具包提供带自定义密钥的加密和不带密钥的加密两种加密模式，其中带自定义密钥的加密中，密钥支持中文字符；  
-两种加密模式加密出来的密文均提供简单的签名验证功能 (即验签，验证密文是否由明文通过指定密钥加密所得)，验签    
-函数 SM3Utils.verify("明文","密钥","密文"),验签函数返回true（验签通过）或false（验签未通过）；  
-两种加密模式使用说明如下：  
-a.自定义密钥的加密  
-SM3Utils.encrypt("明文", "密钥字符(可以是中文)");  
+```
+
+### 国密SM3
+> 国密SM3算法为杂凑算法，是国家密码局公布并推荐使用的一种单向加密算法，其加密过程不可逆。  
+> 本工具包提供带自定义密钥的加密和不带密钥的加密两种加密模式，其中带自定义密钥的加密中，密钥支持中文字符；  
+> 两种加密模式加密出来的密文均提供简单的签名验证功能 (即验签，验证密文是否由明文通过指定密钥加密所得)，验签    
+> 函数 SM3Utils.verify("明文","密钥","密文"),验签函数返回true（验签通过）或false（验签未通过）；  
+
+两种加密模式使用说明如下：
+
+#### a.自定义密钥的加密  
+
+`SM3Utils.encrypt("明文", "密钥字符(可以是中文)");`
+
 示例：  
+
+```java
 //明文  
 String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！";  
 //密钥  
@@ -206,10 +213,15 @@ System.out.println("        带密钥加密后的密文：" + hexStrByKey);
 boolean veryfy=SM3Utils.verify(srcStr, key, hexStrByKey);  
 //验签结果  
 System.out.println("明文(带密钥)与密文验签结果：" + veryfy);
+```
 
-b.不带密钥的加密  
-SM3Utils.encrypt("明文");  
+#### b.不带密钥的加密  
+
+`SM3Utils.encrypt("明文");`
+
 示例：  
+
+```java
 //明文  
 String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！";  
 //加密  
@@ -217,89 +229,123 @@ String hexStrNoKey = SM3Utils.encrypt(srcStr);
 System.out.println("        不带密钥加密后的密文：" + hexStrNoKey);  
 //验签结果  
 System.out.println("明文(不带密钥)与密文验签结果：" + SM3Utils.verify(srcStr, hexStrNoKey));  
-9.国密SM4  
-国密SM4是国家密码局公布的无线局域网产品使用的加密算法，算法本身为分组算法，该算法分组长度为128比特，密钥长度为128比特；  
-加密算法与密钥扩展算法均采用32轮非线性迭代结构，解密算法结构与加密算法结构完全相同，只是密钥轮的使用顺序相反，解密轮密
-钥是加密轮密钥的逆序。  
-本工具包提供带自定义密钥的加密和系统自动生成密钥的加密两种加密模式和简单的验签功能，这两种模式调用的加密过程完全一致，
-需要注意的是，当采用自定义密钥加密时，自定义密码必须是大写的32位的16进制密钥（其他长度的密钥和小写密钥可自行测试）；  
-加密过程：  
-SM4Utils.encryptByEcb("明文", "密钥")；  
-解密过程：  
-SM4Utils.decryptEcb("密钥", "密文");  
-验签(验证密文是否由明文通过指定密钥加密所得)过程：  
-SM4Utils.verifyByEcb("密钥", "密文", "明文");
 
-    完整示例：  
-String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！";  
-// 自定义的32位16进制密钥  
-// String key = "86C63180C2806ED1F47B859DE501215B";  
-// 自动生成密钥  
-String key = ByteUtils.toHexString(autoGenerateKey(DEFAULT_KEY_SIZE));  
-// 加密，key可采用自定义的32位16进制密钥，也可以调用autoGenerateKey生成  
-String cipher = SM4Utils.encryptByEcb(srcStr, key);  
-System.out.println("自动生成的密钥：" + key);  
-// 密文输出  
-System.out.println("加密后的密文：" + cipher);  
-//验签  
-System.out.println("校验密文是否为明文加密所得：" + SM4Utils.verifyByEcb(key, cipher, srcStr));  
-// 解密  
-srcStr = SM4Utils.decryptEcb(key, cipher);  
-System.out.println("采用密钥：" + key);  
+```
+
+### 国密SM4
+
+> [在线测试](https://lzltool.cn/SM4)
+> 国密SM4是国家密码局公布的无线局域网产品使用的加密算法，算法本身为分组算法，该算法分组长度为128比特，密钥长度为128比特；  
+加密算法与密钥扩展算法均采用32轮非线性迭代结构，解密算法结构与加密算法结构完全相同，只是密钥轮的使用顺序相反，解密轮密
+钥是加密轮密钥的逆序。
+> 本工具包提供带自定义密钥的加密和系统自动生成密钥的加密两种加密模式和简单的验签功能，这两种模式调用的加密过程完全一致，
+需要注意的是，当采用自定义密钥加密时，自定义密码必须是大写的32位的16进制密钥（其他长度的密钥和小写密钥可自行测试）；  
+
+#### 加密过程：  
+`SM4Utils.encryptByEcb("明文", "密钥");`
+
+#### 解密过程：  
+`SM4Utils.decryptEcb("密钥", "密文");`
+
+#### 验签(验证密文是否由明文通过指定密钥加密所得)过程：  
+`SM4Utils.verifyByEcb("密钥", "密文", "明文");`
+
+#### 完整示例：
+
+```java
+String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！";
+// 自定义的32位16进制密钥
+// String key = "86C63180C2806ED1F47B859DE501215B";
+// 自动生成密钥
+String key = ByteUtils.toHexString(autoGenerateKey(DEFAULT_KEY_SIZE));
+// 加密，key可采用自定义的32位16进制密钥，也可以调用autoGenerateKey生成
+String cipher = SM4Utils.encryptByEcb(srcStr, key);
+System.out.println("自动生成的密钥：" + key);
+// 密文输出
+System.out.println("加密后的密文：" + cipher);
+//验签
+System.out.println("校验密文是否为明文加密所得：" + SM4Utils.verifyByEcb(key, cipher, srcStr));
+// 解密
+srcStr = SM4Utils.decryptEcb(key, cipher);
+System.out.println("采用密钥：" + key);
 System.out.println("解密后的明文：" + srcStr);
 
-10.DH  
-DH，全称为“Diffie-Hellman”，是一种确保共享KEY安全穿越不安全网络的方法，即常说的密钥一致协议;  
-原理是由甲方产出一对密钥（公钥、私钥），乙方依照甲方公钥产生乙方密钥对（公钥、私钥）。  
-以此为基线，作为数据传输保密基础，同时双方使用同一种对称加密算法构建本地密钥（SecretKey）对数据加密。
-在互通了本地密钥（SecretKey）算法后，甲乙双方公开自己的公钥，使用对方的公钥和刚才产生的私钥加密数据，
-同时可以使用对方的公钥和自己的私钥对数据解密。 可以扩展为多方共享数据通讯，从而实现网络交互数据的安全通讯！
+```
+
+### DH
+
+> DH，全称为“Diffie-Hellman”，是一种确保共享KEY安全穿越不安全网络的方法，即常说的密钥一致协议;
+> 原理是由甲方产出一对密钥（公钥、私钥），乙方依照甲方公钥产生乙方密钥对（公钥、私钥）。
+> 以此为基线，作为数据传输保密基础，同时双方使用同一种对称加密算法构建本地密钥（SecretKey）对数据加密。
+> 在互通了本地密钥（SecretKey）算法后，甲乙双方公开自己的公钥，使用对方的公钥和刚才产生的私钥加密数据，
+> 同时可以使用对方的公钥和自己的私钥对数据解密。 可以扩展为多方共享数据通讯，从而实现网络交互数据的安全通讯！
+
 密钥长度：512-1024，必须是64的整数倍
 
-     完整示例：
-        // 初始化长度1024的密钥， 并生成甲方密钥对 
-		Map<String, Object> keyMap1 = DHUtils.initKey(1024); 
-		// 甲方公钥 
-		byte[] publicKey1 = DHUtils.getPublicKey(keyMap1); 
-		// 甲方私钥 
-		byte[] privateKey1 = DHUtils.getPrivateKey(keyMap1); 
-		 
-		// 乙方根据甲方公钥产生乙方密钥对 
-		Map<String, Object> keyMap2 = DHUtils.initKey(publicKey1); 
-		// 乙方公钥 
-		byte[] publicKey2 = DHUtils.getPublicKey(keyMap2); 
-		// 乙方私钥 
-		byte[] privateKey2 = DHUtils.getPrivateKey(keyMap2); 
-		  
-		// 根据甲方私钥和乙方的公钥， 生成甲方本地密钥secretKey1 
-		byte[] secretKey1 = DHUtils.getSecretKeyBytes(publicKey2, privateKey1); 
-		System.out.println("甲方本地密钥 : " + StringByteHexUtils.byteArrayToHexString(secretKey1)); 
+#### 完整示例：
+
+```java
+// 初始化长度1024的密钥， 并生成甲方密钥对 
+Map<String, Object> keyMap1 = DHUtils.initKey(1024); 
+// 甲方公钥 
+byte[] publicKey1 = DHUtils.getPublicKey(keyMap1); 
+// 甲方私钥 
+byte[] privateKey1 = DHUtils.getPrivateKey(keyMap1); 
  
-		// 乙方根据其私钥和甲方公钥， 生成乙方本地密钥secretKey2 
-		byte[] secretKey2 = DHUtils.getSecretKeyBytes(publicKey1, privateKey2); 
-		
-		// 原始信息 
-		String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！"; 
-		// 测试数据加密和解密 
-		System.out.println("加密前的数据：" + srcStr); 
-		// 甲方进行数据的加密 
-		// 用的是甲方的私钥和乙方的公钥 
-		byte[] encryptDH = DHUtils.encryptDH(srcStr.getBytes(), publicKey2,privateKey1); 
-		System.out.println("加密后的数据 字节数组转16进制：" + StringByteHexUtils.byteArrayToHexString(encryptDH)); 
-		// 乙方进行数据的解密 
-		// 用的是乙方的私钥和甲方的公钥 
-		byte[] decryptDH = DHUtils.decryptDH(encryptDH, publicKey1, privateKey2); 
-		
-		System.out.println("解密后的数据：" + new String(decryptDH)); 
-11.SHA
-调用方法：
+// 乙方根据甲方公钥产生乙方密钥对 
+Map<String, Object> keyMap2 = DHUtils.initKey(publicKey1); 
+// 乙方公钥 
+byte[] publicKey2 = DHUtils.getPublicKey(keyMap2); 
+// 乙方私钥 
+byte[] privateKey2 = DHUtils.getPrivateKey(keyMap2); 
+  
+// 根据甲方私钥和乙方的公钥， 生成甲方本地密钥secretKey1 
+byte[] secretKey1 = DHUtils.getSecretKeyBytes(publicKey2, privateKey1); 
+System.out.println("甲方本地密钥 : " + StringByteHexUtils.byteArrayToHexString(secretKey1)); 
+// 乙方根据其私钥和甲方公钥， 生成乙方本地密钥secretKey2 
+byte[] secretKey2 = DHUtils.getSecretKeyBytes(publicKey1, privateKey2); 
+// 原始信息 
+String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！"; 
+// 测试数据加密和解密 
+System.out.println("加密前的数据：" + srcStr); 
+// 甲方进行数据的加密 
+// 用的是甲方的私钥和乙方的公钥 
+byte[] encryptDH = DHUtils.encryptDH(srcStr.getBytes(), publicKey2,privateKey1); 
+System.out.println("加密后的数据 字节数组转16进制：" + StringByteHexUtils.byteArrayToHexString(encryptDH)); 
+// 乙方进行数据的解密 
+// 用的是乙方的私钥和甲方的公钥 
+byte[] decryptDH = DHUtils.decryptDH(encryptDH, publicKey1, privateKey2); 
+System.out.println("解密后的数据：" + new String(decryptDH)); 
+```
+
+### SHA
+
+#### 调用方法：
+
+```java
 SHAUtils.sha1(原始信息);
 SHAUtils.sha256(原始信息);
 SHAUtils.sha384(原始信息);
 SHAUtils.sha512(原始信息);
-12.MD2
-调用方法：MD2Utils.Md2(原始信息)；
-13.MD4
-调用方法：MD4Utils.Md4(原始信息)；
-14.RipeMD-160
-调用方法：RipeMD160Utils.ripeMD160(原始信息)；
+```
+
+### MD2
+
+调用方法：
+```java
+MD2Utils.Md2(原始信息);
+```
+
+### MD4
+
+调用方法：
+```java
+MD4Utils.Md4(原始信息);
+```
+
+### RipeMD-160
+
+调用方法：
+```java
+RipeMD160Utils.ripeMD160(原始信息);
+```

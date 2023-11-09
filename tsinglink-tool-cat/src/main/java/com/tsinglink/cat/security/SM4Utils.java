@@ -4,11 +4,9 @@ import java.security.Key;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.util.Arrays;
-
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.pqc.math.linearalgebra.ByteUtils;
 
@@ -86,6 +84,30 @@ public class SM4Utils {
 		return ByteUtils.toHexString(cipherArray);
 
 	}
+
+	/**
+	 * SM4加密：采集自己提供16进制密钥
+	 *
+	 *
+	 * @explain 加密模式：ECB 密文长度不固定，会随着被加密字符串长度的变化而变化
+	 * @param key
+	 *            16进制密钥（忽略大小写）或采集autoGenerateKey自动生成：String
+	 *            key=ByteUtils.toHexString(autoGenerateKey(DEFAULT_KEY_SIZE))
+	 * @param srcData
+	 *            待加密16进制的byte[]
+	 * @return 返回16进制的加密字符串
+	 * @throws Exception
+	 */
+	public static String encryptByEcb(byte[] srcData, String key) throws Exception {
+		// 16进制字符串byte[]
+		byte[] keyData = ByteUtils.fromHexString(key);
+		// 加密后的数组
+		byte[] cipherArray = encrypt_Ecb_Padding(keyData, srcData);
+		// 返回加密后的16进制字符串
+		return ByteUtils.toHexString(cipherArray);
+
+	}
+
 
 	/**
 	 * 加密模式
