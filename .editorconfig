@@ -1,0 +1,76 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# 顶部的EditorConfig文件
+root = true
+
+# unix风格的换行符，每个文件都以换行符结尾
+[*]
+# 缩进类型(tab是硬缩进，space为软缩进)
+indent_style = space
+# 缩进类型(tab是硬缩进，space为软缩进)
+indent_size = 4
+# 字符编码，有以下几种类型：latin1, utf-8, utf-8-bom, utf-16be, utf-16le
+charset = utf-8
+# 换行符格式，值为lf、cr和crlf
+# 文件换行符是 linux 的 `\n`
+end_of_line = lf
+# 设为true表示会去除换行行首的任意空白字符。
+trim_trailing_whitespace = true
+# 始终在文件末尾插入一个新行
+insert_final_newline = true
+# 每一行最大长度，就是IDEA里面的那条虚线，格式化时，超长就会换行显示。
+max_line_length = 300
+
+tab_width = 4
+
+# 下面是 idea特使的配置
+ij_continuation_indent_size = 8
+ij_formatter_off_tag = @formatter:off
+ij_formatter_on_tag = @formatter:on
+ij_formatter_tags_enabled = false
+ij_smart_tabs = false
+ij_visual_guides = none
+# ij_wrap_on_typing = false[*.java]
+
+
+# 用大括号展开符号匹配多个文件
+# 设置默认字符集
+# 设置所有以.js,.py结尾的文件的编码格式
+[*.{js,py}]
+charset = utf-8
+
+# 使用空格缩进，设置4个空格缩进
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.{java,kt}]
+# 控制运算符左右各一个空格
+insert_final_newline = true
+trim_trailing_whitespace = true
+# 使用空格缩进，缩进大小为4
+indent_style = space
+indent_size = 4
+
+
+# 使用制表符(tab)缩进
+[Makefile]
+indent_style = tab
+
+# 设置lib目录下的所有JS的缩进风格(使用空格缩进，缩进占用两个空格的位置)
+[lib/**.js]
+indent_style = space
+indent_size = 2
+# 匹配确切文件 package.json或.travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+max_line_length = 0
+trim_trailing_whitespace = false
+
+# 配置XML文件的缩进（如果有）
+[*.xml]
+indent_size = 2
+
