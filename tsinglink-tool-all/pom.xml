@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.tsinglink</groupId>
     <artifactId>tsinglink-tool</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
   </parent>
 
   <artifactId>tsinglink-tool-all</artifactId>
@@ -26,19 +26,19 @@
     <dependency>
       <groupId>com.tsinglink</groupId>
       <artifactId>tsinglink-tool-cat</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
 
     <dependency>
       <groupId>com.tsinglink</groupId>
       <artifactId>tsinglink-tool-kotlin-ext</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
 
     <dependency>
       <groupId>com.tsinglink</groupId>
       <artifactId>tsinglink-tool-csv</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
   </dependencies>
 

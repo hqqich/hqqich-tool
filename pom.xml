@@ -11,9 +11,10 @@
     <module>tsinglink-tool-kotlin-ext</module>
     <module>tsinglink-tool-csv</module>
     <module>tsinglink-tool-test</module>
+    <module>tsinglink-tool-id-generator</module>
   </modules>
   <groupId>com.tsinglink</groupId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <packaging>pom</packaging>
 
   <name>tsinglink-tool</name>
