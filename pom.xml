@@ -166,6 +166,10 @@
     </dependency>
   </dependencies>
 
+  <dependencyManagement>
+    <dependencies>
+    </dependencies>
+  </dependencyManagement>
 
 
   <distributionManagement><!-- 远程部署管理信息 -->
