@@ -177,12 +177,12 @@
     <repository><!--部署项目产生的构件到远程仓库需要的信息 -->
       <id>maven_release</id>
       <name>maven-releases</name>
-      <url>http://172.22.90.1:5678/repository/maven-releases/</url>
+      <url>http://172.22.90.3:5678/repository/maven-releases/</url>
     </repository>
     <snapshotRepository><!-- 如果没有配置该元素，默认部署到repository元素配置的仓库 -->
       <id>maven_snapshots</id>
       <name>maven-snapshots</name>
-      <url>http://172.22.90.1:5678/repository/maven-snapshots/</url>
+      <url>http://172.22.90.3:5678/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 

@@ -3,7 +3,6 @@ package com.tsinglink.cat.security;
 import com.tsinglink.cat.utils.StringByteHexUtils;
 import java.security.SecureRandom;
 import java.util.Base64;
-
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -11,7 +10,7 @@ import javax.crypto.spec.DESKeySpec;
 
 
 /**
- * 
+ *
  * DES加密说明<br>
  * DES是一种对称加密算法，对称加密即：加密和解密使用相同密钥的算法。<br>
  * 注意：DES加密和解密过程中，密钥长度必须是8的倍数;<br>
@@ -20,7 +19,7 @@ public class DESUtils {
 
 	/**
 	 * 加密过程
-	 * 
+	 *
 	 * @param src
 	 *            原始信息
 	 * @param password
@@ -60,19 +59,19 @@ public class DESUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * 解密
-	 * 
+	 *
 	 * @param src
 	 *            密文字节数组 byte[]
-	 * 
+	 *
 	 * @param password
 	 *            密码 String
-	 * 
+	 *
 	 * @return byte[]
-	 * 
+	 *
 	 * @throws Exception
-	 * 
+	 *
 	 */
 
 	public static byte[] decrypt(byte[] src, String password) throws Exception {
@@ -102,9 +101,9 @@ public class DESUtils {
 
 	public static void main(String[] args) throws Exception {
 		// 待加密内容
-		String srcStr = "春宵一刻值千金，花有清香月有阴；歌管楼台声细细，秋千院落夜沉沉！";
+		String srcStr = "Enver20191210";
 		// 密码，长度必须是8的倍数
-		String password = "ABCDEFGH12345678";
+		String password = "E526A308";
 		byte[] encriptMsg = DESUtils.encrypt(srcStr, password);
 		String enc = new String(encriptMsg);
 		System.out.println("明文信息：" + srcStr);
@@ -140,7 +139,7 @@ public class DESUtils {
 		//利用密码password进行解密
 		byte[] decryResult = DESUtils.decrypt(encriptMsg, password);
 		System.out.println("DES利用密码串解密后：" + new String(decryResult));*/
-		
+
 	}
 
 }
