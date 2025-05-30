@@ -2,6 +2,28 @@
 
 
 
+## 引入
+
+```xml
+<project>
+  <repositories>
+    <repository>
+      <id>io.github.hqqich</id>
+      <name>hqqich-tool-all</name>
+      <url>https://hqqich.github.io/hqqich-tool/maven-repo/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.hqqich</groupId>
+      <artifactId>hqqich-tool-all</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+
 ## 0. hqqich-tool-all
 
 引用所有工具
