@@ -38,5 +38,5 @@ build/
 .DS_Store
 /.idea/
 /doc/
-/tsinglink-tool-all/dependency-reduced-pom.xml
-/tsinglink-tool-cat/doc/
+/hqqich-tool-all/dependency-reduced-pom.xml
+/hqqich-tool-cat/doc/

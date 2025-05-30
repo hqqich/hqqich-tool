@@ -4,27 +4,27 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>tsinglink-tool</artifactId>
+  <artifactId>hqqich-tool</artifactId>
   <modules>
-    <module>tsinglink-tool-all</module>
-    <module>tsinglink-tool-cat</module>
-    <module>tsinglink-tool-kotlin-ext</module>
-    <module>tsinglink-tool-csv</module>
-    <module>tsinglink-tool-test</module>
-    <module>tsinglink-tool-id-generator</module>
+    <module>hqqich-tool-all</module>
+    <module>hqqich-tool-cat</module>
+    <module>hqqich-tool-kotlin-ext</module>
+    <module>hqqich-tool-csv</module>
+    <module>hqqich-tool-test</module>
+    <module>hqqich-tool-id-generator</module>
   </modules>
-  <groupId>com.tsinglink</groupId>
+  <groupId>io.github.hqqich</groupId>
   <version>1.0.2</version>
   <packaging>pom</packaging>
 
-  <name>tsinglink-tool</name>
+  <name>hqqich-tool</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <kotlin.code.style>official</kotlin.code.style>
     <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
-    <Automatic-Module-Name>com.tsinglink</Automatic-Module-Name>
+    <Automatic-Module-Name>io.github.hqqich</Automatic-Module-Name>
   </properties>
 
   <repositories>
@@ -35,8 +35,8 @@
   </repositories>
 
   <build>
-    <sourceDirectory>src/main/kotlin</sourceDirectory>
-    <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+<!--    <sourceDirectory>src/main/kotlin</sourceDirectory>-->
+<!--    <testSourceDirectory>src/test/kotlin</testSourceDirectory>-->
     <plugins>
       <plugin>
         <groupId>org.jetbrains.kotlin</groupId>

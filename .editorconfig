@@ -61,8 +61,18 @@ indent_style = tab
 [lib/**.js]
 indent_style = space
 indent_size = 2
-# 匹配确切文件 package.json或.travis.yml
-[{package.json,.travis.yml}]
+
+[*.yml]
+indent_style = space
+indent_size = 2
+
+[*.yaml]
+indent_style = space
+indent_size = 2
+
+
+# 匹配确切文件 package.json
+[package.json]
 indent_style = space
 indent_size = 2
 
@@ -70,7 +80,8 @@ indent_size = 2
 max_line_length = 0
 trim_trailing_whitespace = false
 
-# 配置XML文件的缩进（如果有）
+# 配置XML文件的缩进
 [*.xml]
+indent_style = space
 indent_size = 2
 
