@@ -6,7 +6,7 @@
   <parent>
     <groupId>io.github.hqqich</groupId>
     <artifactId>hqqich-tool</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
   </parent>
 
   <artifactId>hqqich-tool-all</artifactId>
@@ -26,19 +26,19 @@
     <dependency>
       <groupId>io.github.hqqich</groupId>
       <artifactId>hqqich-tool-cat</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
     </dependency>
 
     <dependency>
       <groupId>io.github.hqqich</groupId>
       <artifactId>hqqich-tool-kotlin-ext</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
     </dependency>
 
     <dependency>
       <groupId>io.github.hqqich</groupId>
       <artifactId>hqqich-tool-csv</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
     </dependency>
   </dependencies>
 
@@ -76,5 +76,7 @@
       </plugin>
     </plugins>
   </build>
+
+
 
 </project>
