@@ -44,6 +44,11 @@
       <artifactId>hqqich-tool-id-generator</artifactId>
       <version>1.0.3</version>
     </dependency>
+    <dependency>
+      <groupId>io.github.hqqich</groupId>
+      <artifactId>hqqich-tool-file</artifactId>
+      <version>1.0.3</version>
+    </dependency>
   </dependencies>
 
   <build>
