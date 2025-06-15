@@ -1,6 +1,6 @@
 package io.github.hqqich;
 
-import io.github.hqqich.csv.entity.CsvProperty;
+import io.github.hqqich.tool.csv.entity.CsvProperty;
 
 /**
  * Created by ChenHao on 2023/10/19 is 10:59.

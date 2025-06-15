@@ -1,15 +1,10 @@
 package io.github.hqqich.tool.csv;
 
-import io.github.hqqich.csv.entity.Rule;
-import io.github.hqqich.csv.listener.CsvListener;
-import io.github.hqqich.csv.listener.CsvToMapListener;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import io.github.hqqich.tool.csv.entity.Rule;
+import io.github.hqqich.tool.csv.listener.CsvListener;
+import io.github.hqqich.tool.csv.listener.CsvToMapListener;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;

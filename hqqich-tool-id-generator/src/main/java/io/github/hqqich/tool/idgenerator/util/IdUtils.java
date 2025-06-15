@@ -1,9 +1,10 @@
 package io.github.hqqich.tool.idgenerator.util;
 
-import io.github.hqqich.idgenerator.contract.IIdGenerator;
-import io.github.hqqich.idgenerator.contract.IdGeneratorException;
-import io.github.hqqich.idgenerator.contract.IdGeneratorOptions;
-import io.github.hqqich.idgenerator.idgen.DefaultIdGenerator;
+import io.github.hqqich.tool.idgenerator.contract.IIdGenerator;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorException;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorOptions;
+import io.github.hqqich.tool.idgenerator.idgen.DefaultIdGenerator;
+
 import java.util.UUID;
 
 /**

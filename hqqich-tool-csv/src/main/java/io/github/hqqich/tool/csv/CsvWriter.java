@@ -1,8 +1,9 @@
 package io.github.hqqich.tool.csv;
 
-import io.github.hqqich.csv.entity.CsvProperty;
-import io.github.hqqich.csv.entity.IgnoreField;
-import io.github.hqqich.csv.entity.Rule;
+import io.github.hqqich.tool.csv.entity.CsvProperty;
+import io.github.hqqich.tool.csv.entity.IgnoreField;
+import io.github.hqqich.tool.csv.entity.Rule;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

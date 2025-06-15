@@ -1,6 +1,6 @@
-package io.github.hqqich.idgenerator;
+package io.github.hqqich.tool.idgenerator;
 
-import io.github.hqqich.idgenerator.util.Seq;
+import io.github.hqqich.tool.idgenerator.util.Seq;
 import org.junit.jupiter.api.Test;
 
 /**

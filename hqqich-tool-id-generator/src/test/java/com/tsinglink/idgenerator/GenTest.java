@@ -1,7 +1,8 @@
-package io.github.hqqich.idgenerator;
+package io.github.hqqich.tool.idgenerator;
 
 
-import io.github.hqqich.idgenerator.util.IdUtils;
+import io.github.hqqich.tool.idgenerator.util.IdUtils;
+
 import java.util.HashSet;
 import java.util.Set;
 

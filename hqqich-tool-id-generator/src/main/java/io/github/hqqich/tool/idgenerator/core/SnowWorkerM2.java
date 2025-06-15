@@ -1,8 +1,8 @@
 package io.github.hqqich.tool.idgenerator.core;
 
 
-import io.github.hqqich.idgenerator.contract.IdGeneratorException;
-import io.github.hqqich.idgenerator.contract.IdGeneratorOptions;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorException;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorOptions;
 
 public class SnowWorkerM2 extends SnowWorkerM1 {
 

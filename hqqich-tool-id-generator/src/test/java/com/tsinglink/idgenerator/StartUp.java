@@ -1,8 +1,8 @@
-package io.github.hqqich.idgenerator;
+package io.github.hqqich.tool.idgenerator;
 
 
-import io.github.hqqich.idgenerator.contract.IdGeneratorOptions;
-import io.github.hqqich.idgenerator.util.IdUtils;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorOptions;
+import io.github.hqqich.tool.idgenerator.util.IdUtils;
 
 public class StartUp {
 

@@ -1,10 +1,10 @@
 package io.github.hqqich.tool.idgenerator.core;
 
 
-import io.github.hqqich.idgenerator.contract.ISnowWorker;
-import io.github.hqqich.idgenerator.contract.IdGeneratorException;
-import io.github.hqqich.idgenerator.contract.IdGeneratorOptions;
-import io.github.hqqich.idgenerator.contract.OverCostActionArg;
+import io.github.hqqich.tool.idgenerator.contract.ISnowWorker;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorException;
+import io.github.hqqich.tool.idgenerator.contract.IdGeneratorOptions;
+import io.github.hqqich.tool.idgenerator.contract.OverCostActionArg;
 
 public class SnowWorkerM1 implements ISnowWorker {
 
