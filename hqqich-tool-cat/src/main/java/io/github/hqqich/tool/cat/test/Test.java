@@ -1,13 +1,9 @@
 package io.github.hqqich.tool.cat.test;
 
-import io.github.hqqich.cat.security.AESUtils;
-import io.github.hqqich.cat.security.DESUtils;
-import io.github.hqqich.cat.security.MD5Utils;
-import io.github.hqqich.cat.security.RSAUtils;
-import io.github.hqqich.cat.security.SM3Utils;
-import io.github.hqqich.cat.security.SM4Utils;
-import java.security.KeyPair;
+import io.github.hqqich.tool.cat.security.*;
 import org.bouncycastle.pqc.math.linearalgebra.ByteUtils;
+
+import java.security.KeyPair;
 
 
 public class Test {
@@ -101,32 +97,36 @@ public class Test {
 
 	}
 	public static void main(String[] args) throws Exception {
-		/*System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆CAT加解密测试☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+		System.out.println("===============CAT加解密测试=====================");
 		Test.aesTest();
 		System.out.println("");
-		System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+		System.out.println("=============================================");
 		System.out.println("");
 		Test.md5Test();
 
 		System.out.println("");
-		System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+		System.out.println("=============================================");
 		System.out.println("");
 		Test.rsaTest();
 
 		System.out.println("");
-		System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+		System.out.println("=============================================");
 		System.out.println("");
 		Test.sm3Test();
 
 		System.out.println("");
-		System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+		System.out.println("=============================================");
 		System.out.println("");
 		Test.sm4Test();
 
 		System.out.println("");
-		System.out.println("☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆");
+		System.out.println("=============================================");
 		System.out.println("");
-		Test.desTest();*/
+		Test.desTest();
+
+        System.out.println("");
+        System.out.println("=============================================");
+        System.out.println("");
 		System.out.println(Integer.valueOf("79cc4519", 16));
 	}
 

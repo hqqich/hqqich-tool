@@ -1,6 +1,7 @@
 package io.github.hqqich.tool.cat.security;
 
-import io.github.hqqich.cat.utils.StringByteHexUtils;
+import io.github.hqqich.tool.cat.utils.StringByteHexUtils;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

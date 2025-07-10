@@ -1,9 +1,10 @@
-package com.hqqich;
+package io.github.hqqich.tool.cat;
 
-import io.github.hqqich.cat.security.DESUtils;
-import java.util.Base64;
+import io.github.hqqich.tool.cat.security.DESUtils;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
+
+import java.util.Base64;
 
 /**
  * Created by chenhao on 2025/3/27 is 09:40.<p/>

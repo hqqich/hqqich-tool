@@ -1,13 +1,13 @@
-package com.hqqich;
+package io.github.hqqich.tool.cat;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.IvParameterSpec;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 public class DESExample {
     public static void main(String[] args) throws Exception {

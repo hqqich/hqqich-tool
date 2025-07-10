@@ -1,10 +1,11 @@
-package com.hqqich;
+package io.github.hqqich.tool.cat;
 
-import io.github.hqqich.cat.security.SM4Utils;
-import java.nio.charset.StandardCharsets;
+import io.github.hqqich.tool.cat.security.SM4Utils;
 import lombok.SneakyThrows;
 import org.bouncycastle.util.encoders.Hex;
 import org.junit.jupiter.api.Test;
+
+import java.nio.charset.StandardCharsets;
 
 public class Sm4Test {
 
