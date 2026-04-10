@@ -15,32 +15,19 @@
 `pom.xml`中添加如下内容：
 
 ```xml
-
 <project>
     <repositories>
         <repository>
-            <id>
-                io.github.hqqich
-            </id>
-            <name>
-                hqqich-tool-all
-            </name>
-            <url>
-                https://hqqich.github.io/hqqich-tool/maven-repo/
-            </url>
+            <id>io.github.hqqich</id>
+            <name>hqqich-tool-all</name>
+            <url>https://hqqich.github.io/hqqich-tool/maven-repo/</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>
-                io.github.hqqich
-            </groupId>
-            <artifactId>
-                hqqich-tool-all
-            </artifactId>
-            <version>
-                1.0.3
-            </version>
+            <groupId>io.github.hqqich</groupId>
+            <artifactId>hqqich-tool-all</artifactId>
+            <version>1.0.3</version>
         </dependency>
     </dependencies>
 </project>
