@@ -1,15 +1,18 @@
 package io.github.hqqich.tool.base;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+
 import java.lang.management.ManagementFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
+import java.util.Arrays;
 import java.util.Date;
-import org.apache.commons.lang3.time.DateFormatUtils;
+import java.util.List;
 
 /**
  * 时间工具类
@@ -17,12 +20,13 @@ import org.apache.commons.lang3.time.DateFormatUtils;
  * @author tsinglink
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
-
     public static String YYYY = "yyyy";
 
     public static String YYYY_MM = "yyyy-MM";
 
     public static String YYYY_MM_DD = "yyyy-MM-dd";
+
+    public static String YYYYMMDD = "yyyyMMdd";
 
     public static String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
 
@@ -80,6 +84,11 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         return new SimpleDateFormat(format).format(date);
     }
 
+    public static final String parseLocalDateTimeToStr(final String format, final LocalDateTime date) {
+        return date.format(DateTimeFormatter.ofPattern(format));
+    }
+
+
     public static final Date dateTime(final String format, final String ts) {
         try {
             return new SimpleDateFormat(format).parse(ts);
@@ -120,7 +129,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
             return null;
         }
         try {
-            return DateUtils.parseDate(str.toString(), parsePatterns);
+            return parseDate(str.toString(), parsePatterns);
         } catch (ParseException e) {
             return null;
         }
@@ -177,21 +186,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         long min = diff % nd % nh / nm;
         // 计算差多少秒//输出结果
         long sec = diff % nd % nh % nm / ns;
-
-        if (day > 0) {
-            return day + "天" + hour + "小时" + min + "分钟" + sec + "秒";
-        }
-        if (hour > 0) {
-            return hour + "小时" + min + "分钟" + sec + "秒";
-        }
-        if (min > 0) {
-            return min + "分钟" + sec + "秒";
-        }
-        if (sec > 0) {
-            return sec + "秒";
-        }
-
-        return "";
+        return day + "天" + hour + "小时" + min + "分钟" + sec + "秒";
     }
 
     /**
@@ -212,43 +207,53 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     }
 
     public static String timStampToDateTime(long timeStamp) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp))));
 
         //SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy 年 MM 月 dd 日 HH 时 mm 分 ss 秒");
         //String sd2 = sdf2.format(new Date(Long.parseLong(String.valueOf(timeStamp))));
-        ////System.out.println("格式化结果：" + sd2);
+        ////logger.info("格式化结果：" + sd2);
 
     }
 
-    public static String formatDataTime(Long startTime, Long endTime) {
-        if (startTime != null && endTime != null) {  // 结束
-            return DateUtils.getDatePoor(endTime, startTime);
+    // =============== localDateTime相关 ==============
+
+    public static LocalDateTime parseToLocalDateTime(String dateStr) {
+        try {
+            // 定义支持的日期格式（按优先级排序）
+            List<DateTimeFormatter> formatters = Arrays.asList(
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd"),  // 优先匹配 yyyy-MM-dd
+                    //DateTimeFormatter.ofPattern("yyyy-MM")
+                    new DateTimeFormatterBuilder()
+                            .appendPattern("yyyy-MM")  // 解析年份
+                            .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)   // 默认日期 1
+                            .toFormatter()
+                    ,     // 然后匹配 yyyy-MM
+                    new DateTimeFormatterBuilder()
+                            .appendPattern("yyyy")  // 解析年份
+                            .parseDefaulting(ChronoField.MONTH_OF_YEAR, 1)  // 默认月份 1
+                            .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)   // 默认日期 1
+                            .toFormatter()         // 最后匹配 yyyy
+            );
+
+            // 尝试用不同的格式解析
+            for (DateTimeFormatter formatter : formatters) {
+                try {
+                    LocalDate date = LocalDate.parse(dateStr, formatter);
+                    return date.atStartOfDay(); // 转换为 LocalDateTime，时间设为 00:00
+                } catch (DateTimeParseException e) {
+                    // 忽略异常，尝试下一种格式
+                }
+            }
+
+            // 如果所有格式都不匹配，抛出异常
+            throw new IllegalArgumentException("Invalid date format: " + dateStr + ". Expected formats: yyyy, yyyy-MM, or yyyy-MM-dd");
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Failed to parse date: " + dateStr, e);
         }
-        if (startTime != null && endTime == null) {  // 正在运行
-            return DateUtils.getDatePoor(System.currentTimeMillis(), startTime);
-        }
-        if (startTime == null && endTime == null) {  // 未开始
-            return "";
-        }
-        return "";
     }
 
-    public static String formatDataTime(LocalDateTime startTime, LocalDateTime endTime) {
-        if (startTime != null && endTime != null) {  // 结束
-            long a = startTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
-            long b = endTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
-            return DateUtils.getDatePoor(b, a);
-        }
-        if (startTime != null && endTime == null) {  // 正在运行
-            long a = startTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
-            return DateUtils.getDatePoor(System.currentTimeMillis(), a);
-        }
-        if (startTime == null && endTime == null) {  // 未开始
-            return "";
-        }
-        return "";
+    public static String parseDateToStr(final String format, final LocalDate time) {
+        return time.format(DateTimeFormatter.ofPattern(format));
     }
-
-
 }

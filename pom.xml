@@ -14,6 +14,7 @@
     <module>hqqich-tool-id-generator</module>
     <module>hqqich-tool-file</module>
     <module>hqqich-tool-base</module>
+    <module>hqqich-tool-cache</module>
   </modules>
   <groupId>io.github.hqqich</groupId>
   <version>1.0.3</version>
@@ -265,6 +266,12 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>33.4.8-jre</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.tika/tika-core -->
+      <dependency>
+        <groupId>org.apache.tika</groupId>
+        <artifactId>tika-core</artifactId>
+        <version>3.2.3</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
