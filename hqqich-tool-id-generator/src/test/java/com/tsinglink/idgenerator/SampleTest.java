@@ -4,7 +4,7 @@ import io.github.hqqich.tool.idgenerator.util.Seq;
 import org.junit.jupiter.api.Test;
 
 /**
- * Created by ChenHao on 2023/11/16 is 14:29.
+ * Created by hqqich on 2023/11/16 is 14:29.
  *
  * @author hqqich
  */

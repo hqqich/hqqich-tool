@@ -1,9 +1,9 @@
 package io.github.hqqich.tool.file;
 
 /**
- * Created by chenhao on 2025/3/4 is 下午5:16.<p/>
+ * Created by hqqich on 2025/3/4 is 下午5:16.<p/>
  *
- * @author chenhao
+ * @author hqqich
  */
 public interface ProgressListener {
 

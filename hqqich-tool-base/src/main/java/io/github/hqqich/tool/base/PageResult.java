@@ -1,14 +1,13 @@
 package io.github.hqqich.tool.base;
 
-import lombok.Builder;
-
 import java.util.Collections;
 import java.util.List;
+import lombok.Builder;
 
 /**
- * Created by chenhao on 2024/4/5 is 15:13.<p/>
+ * Created by hqqich on 2024/4/5 is 15:13.<p/>
  *
- * @author chenhao
+ * @author hqqich
  */
 @Builder
 public class PageResult<T> {

@@ -1,10 +1,12 @@
 package io.github.hqqich.cache;
 
 
-import com.google.common.cache.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import com.google.common.cache.RemovalCause;
+import com.google.common.cache.RemovalListener;
+import com.google.common.cache.RemovalNotification;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,9 +14,11 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Created by ChenHao on 2022/8/11 is 15:15.
+ * Created by hqqich on 2022/8/11 is 15:15.
  *
  * @date 2022/8/11
  */
@@ -209,7 +213,7 @@ public class CacheManager {
 	 * 显示缓存中的所有内容
 	 *
 	 * @return
-	 * @author chenhao
+	 * @author hqqich
 	 * @date 2022/8/25 19:28
 	 **/
 	public static Set<Entry<String, String>> display() {

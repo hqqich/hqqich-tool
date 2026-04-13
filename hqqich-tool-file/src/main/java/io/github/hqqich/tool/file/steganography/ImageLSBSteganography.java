@@ -1,13 +1,13 @@
 package io.github.hqqich.tool.file.steganography;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import javax.imageio.ImageIO;
 
 /**
- * Created by ChenHao on 2025-07-10 is 23:12.<br>
+ * Created by hqqich on 2025-07-10 is 23:12.<br>
  * <h1>基本概念</h1>
  * LSB 方法：修改像素颜色的最低有效位来隐藏信息，对图片视觉影响最小<br>
  * 本示例：仅处理 PNG 格式（无损压缩），将文本隐藏到图片的 RGB 通道中<br>

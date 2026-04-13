@@ -3,7 +3,7 @@ package io.github.hqqich;
 import io.github.hqqich.tool.csv.entity.CsvProperty;
 
 /**
- * Created by ChenHao on 2023/10/19 is 10:59.
+ * Created by hqqich on 2023/10/19 is 10:59.
  *
  * @author hqqich
  */
