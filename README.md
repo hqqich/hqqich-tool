@@ -1,5 +1,6 @@
 # hqqich工具
 
+[AGENTS.md](./AGENTS.md)
 
 | 模块                       | 名称       | 版本    |
 |--------------------------|----------|-------|
@@ -9,6 +10,7 @@
 | hqqich-tool-id-generator | id生成器    | 1.0.3 |
 | hqqich-tool-kotlin-ext   | kotlin扩展 | 1.0.3 |
 | hqqich-tool-file         | 文件操作相关   | 1.0.3 |
+| hqqich-tool-cache        | 缓存工具     | 1.0.3 |
 
 ### maven项目使用
 
