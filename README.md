@@ -2,6 +2,22 @@
 
 [AGENTS.md](./AGENTS.md)
 
+1. 包不能使用 git lfs 的方式,这种会导致not found
+
+2. 如果报错为校验签名错误,修改一下settings.xml的配置
+```text
+<settings>
+    <profiles>
+        <profile>
+            <id>allow-invalid-checksums</id>
+            <properties>
+                <checksum.failure.policy>warn</checksum.failure.policy>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
+```
+
 | 模块                       | 名称          | 版本    |
 |--------------------------|-------------|-------|
 | hqqich-tool-all          | 引用所有工具      | 1.0.3 |
