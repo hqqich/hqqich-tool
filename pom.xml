@@ -15,6 +15,7 @@
     <module>hqqich-tool-file</module>
     <module>hqqich-tool-base</module>
     <module>hqqich-tool-cache</module>
+    <module>hqqich-tool-kts</module>
   </modules>
   <groupId>io.github.hqqich</groupId>
   <version>1.0.3</version>
