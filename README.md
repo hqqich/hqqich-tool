@@ -2,15 +2,16 @@
 
 [AGENTS.md](./AGENTS.md)
 
-| 模块                       | 名称       | 版本    |
-|--------------------------|----------|-------|
-| hqqich-tool-all          | 引用所有工具   | 1.0.3 |
-| hqqich-tool-cat          | 加解密工具    | 1.0.3 |
-| hqqich-tool-csv          | csv工具    | 1.0.3 |
-| hqqich-tool-id-generator | id生成器    | 1.0.3 |
-| hqqich-tool-kotlin-ext   | kotlin扩展 | 1.0.3 |
-| hqqich-tool-file         | 文件操作相关   | 1.0.3 |
-| hqqich-tool-cache        | 缓存工具     | 1.0.3 |
+| 模块                       | 名称          | 版本    |
+|--------------------------|-------------|-------|
+| hqqich-tool-all          | 引用所有工具      | 1.0.3 |
+| hqqich-tool-cat          | 加解密工具       | 1.0.3 |
+| hqqich-tool-csv          | csv工具       | 1.0.3 |
+| hqqich-tool-id-generator | id生成器       | 1.0.3 |
+| hqqich-tool-kotlin-ext   | kotlin扩展    | 1.0.3 |
+| hqqich-tool-file         | 文件操作相关      | 1.0.3 |
+| hqqich-tool-cache        | 缓存工具        | 1.0.3 |
+| hqqich-tool-kts          | 给kts脚本用的工具类 | 1.0.3 |
 
 ### maven项目使用
 

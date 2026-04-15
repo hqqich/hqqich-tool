@@ -43,3 +43,4 @@ build/
 /public/
 /hqqich-util（老的项目，这里备份一下，没啥用）.zip
 /.m2repo/
+/hqqich-tool-kts/logs/

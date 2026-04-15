@@ -10,7 +10,8 @@ public class AppTest {
     @Test
     public void testApp() {
 
-        KtsLogger aa = Loggers.get("aa");
+        Loggers.enableFile("logs/app.log");
+        KtsLogger aa = Loggers.get(AppTest.class);
 
         aa.info("你好");
     }
