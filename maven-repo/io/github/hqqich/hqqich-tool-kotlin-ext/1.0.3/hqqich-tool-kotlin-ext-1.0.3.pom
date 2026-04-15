@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>io.github.hqqich</groupId>
-    <artifactId>hqqich-tool</artifactId>
-    <version>1.0.3</version>
-  </parent>
-
-  <artifactId>hqqich-tool-kotlin-ext</artifactId>
-
-  <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-
-</project>
+version https://git-lfs.github.com/spec/v1
+oid sha256:cf4e840838dfdf12d2c9b2d29983cdf29f964dc22478a60cf8b6da17008cf4f3
+size 712

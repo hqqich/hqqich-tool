@@ -1,12 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<metadata>
-  <groupId>io.github.hqqich</groupId>
-  <artifactId>hqqich-tool-all</artifactId>
-  <versioning>
-    <release>1.0.3</release>
-    <versions>
-      <version>1.0.3</version>
-    </versions>
-    <lastUpdated>20250603065155</lastUpdated>
-  </versioning>
-</metadata>
+version https://git-lfs.github.com/spec/v1
+oid sha256:c8f7c395809feb6b19e616d3ae9297eda949d46bf61eb577162289aa52d588f6
+size 323

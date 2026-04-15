@@ -1,30 +1,3 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>io.github.hqqich</groupId>
-    <artifactId>hqqich-tool</artifactId>
-    <version>1.0.3</version>
-  </parent>
-
-  <artifactId>hqqich-tool-base</artifactId>
-  <packaging>jar</packaging>
-
-  <name>hqqich-tool-base</name>
-  <url>http://maven.apache.org</url>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <dependencies>
-
-
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version> 3.12.0</version>
-    </dependency>
-
-  </dependencies>
-</project>
+version https://git-lfs.github.com/spec/v1
+oid sha256:307dbd307f793e8f9a385d7278d0eb83399ee54085ec2ea448f68ecca2447f1b
+size 867

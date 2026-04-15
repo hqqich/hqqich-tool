@@ -1,12 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<metadata>
-  <groupId>io.github.hqqich</groupId>
-  <artifactId>hqqich-tool-kotlin-ext</artifactId>
-  <versioning>
-    <release>1.0.3</release>
-    <versions>
-      <version>1.0.3</version>
-    </versions>
-    <lastUpdated>20250603065155</lastUpdated>
-  </versioning>
-</metadata>
+version https://git-lfs.github.com/spec/v1
+oid sha256:e3b96855dd521a13ea299e424b79f1e008da1ca74851d4ffc278aab916ea1d80
+size 330
