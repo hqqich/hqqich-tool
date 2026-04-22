@@ -44,3 +44,4 @@ build/
 /hqqich-util（老的项目，这里备份一下，没啥用）.zip
 /.m2repo/
 /hqqich-tool-kts/logs/
+/hqqich-tool-file/src/test/java/io/github/hqqich/tool/file/webdav/WebDavUtilsTest.java
