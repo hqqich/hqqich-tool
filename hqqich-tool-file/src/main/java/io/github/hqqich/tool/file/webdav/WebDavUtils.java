@@ -14,7 +14,16 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
 /**
- * WebDAV 上传工具类
+ * WebDAV 上传工具类<br>
+ * // 上传文件<br>
+ * byte[] data = "Hello, WebDAV!".getBytes();<br>
+ * sardine.put("https://dav.example.com/remote.php/dav/files/user/hello.txt", data);<br>
+ *<br>
+ * // 列出目录内容<br>
+ * List<DavResource> resources = sardine.list("https://dav.example.com/remote.php/dav/files/user/");<br>
+ * for (DavResource res : resources) {<br>
+ *     System.out.println(res.getName());<br>
+ * }<br>
  */
 public final class WebDavUtils {
 
