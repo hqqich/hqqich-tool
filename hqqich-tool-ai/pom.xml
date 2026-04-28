@@ -7,10 +7,11 @@
     <version>1.0.3</version>
   </parent>
 
-  <artifactId>hqqich-tool-base</artifactId>
+  <groupId>io.github.hqqich.tool.ai</groupId>
+  <artifactId>hqqich-tool-ai</artifactId>
   <packaging>jar</packaging>
 
-  <name>hqqich-tool-base</name>
+  <name>hqqich-tool-ai</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -20,9 +21,24 @@
   <dependencies>
 
     <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
+      <groupId>io.github.hqqich</groupId>
+      <artifactId>hqqich-tool-base</artifactId>
+      <version>1.0.3</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+    </dependency>
+
+    <!-- Source: https://mvnrepository.com/artifact/com.openai/openai-java -->
+    <dependency>
+      <groupId>com.openai</groupId>
+      <artifactId>openai-java</artifactId>
+      <version>4.32.0</version>
+    </dependency>
+
+
 
   </dependencies>
 </project>
