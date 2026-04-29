@@ -58,11 +58,19 @@
       <artifactId>tika-core</artifactId>
     </dependency>
 
-
+    <!-- webdav -->
     <dependency>
       <groupId>com.github.lookfirst</groupId>
       <artifactId>sardine</artifactId>
       <version>5.12</version>
+    </dependency>
+
+
+    <!-- sftp -->
+    <dependency>
+      <groupId>com.github.mwiede</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.2.23</version>
     </dependency>
 
 
