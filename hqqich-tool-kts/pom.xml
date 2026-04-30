@@ -10,7 +10,7 @@
   <artifactId>hqqich-tool-kts</artifactId>
   <packaging>jar</packaging>
 
-  <name>hqqich-tool-kts</name>
+  <name>${project.artifactId}</name>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
