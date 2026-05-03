@@ -14,16 +14,48 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
 /**
- * WebDAV 上传工具类<br>
- * // 上传文件<br>
- * byte[] data = "Hello, WebDAV!".getBytes();<br>
- * sardine.put("https://dav.example.com/remote.php/dav/files/user/hello.txt", data);<br>
- *<br>
- * // 列出目录内容<br>
- * List<DavResource> resources = sardine.list("https://dav.example.com/remote.php/dav/files/user/");<br>
- * for (DavResource res : resources) {<br>
- *     System.out.println(res.getName());<br>
- * }<br>
+ * WebDAV 客户端工具类（基于 Sardine 库实现）
+ * <p>
+ * 提供 WebDAV 协议的文件操作功能，包括：
+ * <ul>
+ *     <li>文件上传/下载</li>
+ *     <li>目录遍历</li>
+ *     <li>文件属性管理</li>
+ * </ul>
+ *
+ * <h3>使用示例</h3>
+ *
+ * <b>1. 文件上传</b>
+ * <pre>
+ * // 准备文件数据
+ * byte[] fileData = "Hello, WebDAV!".getBytes(StandardCharsets.UTF_8);
+ *
+ * // 上传到指定路径
+ * // 示例路径格式：https://{domain}/remote.php/dav/files/{username}/path/to/file.txt
+ * sardine.put("https://dav.example.com/remote.php/dav/files/user/hello.txt", fileData);
+ * </pre>
+ *
+ * <b>2. 目录内容遍历</b>
+ * <pre>
+ * // 列出目录下所有资源
+ * List&lt;DavResource&gt; resources = sardine.list(
+ *     "https://dav.example.com/remote.php/dav/files/user/"
+ * );
+ *
+ * // 打印资源名称
+ * for (DavResource res : resources) {
+ *     System.out.println("资源名称: " + res.getName() +
+ *                       " | 类型: " + (res.isDirectory() ? "目录" : "文件") +
+ *                       " | 大小: " + res.getContentLength() + " bytes");
+ * }
+ * </pre>
+ *
+ * <h3>注意事项</h3>
+ * <ul>
+ *     <li>路径格式需符合 Nextcloud/OwnCloud 的 WebDAV 实现规范</li>
+ *     <li>上传前需确保目录已存在，否则会抛出异常</li>
+ *     <li>大文件上传建议使用流式接口（Sardine 的 put 方法重载）</li>
+ * </ul>
  */
 public final class WebDavUtils {
 
